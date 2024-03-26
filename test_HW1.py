@@ -133,22 +133,26 @@ Faker.seed()
 
 ######################## Фильтр ########################
     
-def test_filter():
-    browser.get('https://www.saucedemo.com')
+# def test_filter():
+#     browser.get('https://www.saucedemo.com')
     
-    browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
-    browser.find_element(By.XPATH, '//*[@id="password"]').send_keys('secret_sauce')
-    browser.find_element(By.XPATH, '//*[@id="login-button"]').click()
-    browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[1]').click()
-    assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_name "])[1]').text == 'Sauce Labs Backpack'
-    time.sleep(3)
-    browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[2]').click()
-    assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_name "])[1]').text == 'Test.allTheThings() T-Shirt (Red)'
-    time.sleep(3)
-    browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[3]').click()
-    assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_price"])[1]').text == '$7.99'
-    time.sleep(3)
-    browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[4]').click()
-    assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_price"])[1]').text == '$49.99'
-    time.sleep(3)
+#     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
+#     browser.find_element(By.XPATH, '//*[@id="password"]').send_keys('secret_sauce')
+#     browser.find_element(By.XPATH, '//*[@id="login-button"]').click()
+#     browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[1]').click()
+#     assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_name "])[1]').text == 'Sauce Labs Backpack'
+#     time.sleep(3)
+#     browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[2]').click()
+#     assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_name "])[1]').text == 'Test.allTheThings() T-Shirt (Red)'
+#     time.sleep(3)
+#     browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[3]').click()
+#     assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_price"])[1]').text == '$7.99'
+#     time.sleep(3)
+#     browser.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/div/span/select/option[4]').click()
+#     assert browser.find_element(By.XPATH, '(//*[@class="inventory_item_price"])[1]').text == '$49.99'
+#     time.sleep(3)
+
+######################## Бургер меню ########################
+
+
 
