@@ -11,6 +11,7 @@ Faker.seed()
 ####################### Авторизация ########################
 
 def test_auth_positive():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -21,7 +22,9 @@ def test_auth_positive():
     browser.quit()
 
 def test_auth_negative():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
+
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('user')
     browser.find_element(By.XPATH, '//*[@id="password"]').send_keys('user')
     browser.find_element(By.XPATH, '//*[@id="login-button"]').click()
@@ -32,6 +35,7 @@ def test_auth_negative():
 ####################### Корзина ########################
 
 def test_add_item_to_cart():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -44,6 +48,7 @@ def test_add_item_to_cart():
     browser.quit()
 
 def test_delete_item_from_cart():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -59,6 +64,7 @@ def test_delete_item_from_cart():
     browser.quit()
 
 def test_add_delete_item_to_cart_from_card():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -67,10 +73,10 @@ def test_add_delete_item_to_cart_from_card():
     
     browser.get('https://www.saucedemo.com/inventory-item.html?id=4')
     time.sleep(2)
-    browser.find_element(By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]').click()
+    browser.find_element(By.ID, "add-to-cart").click()
     assert browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a/span').text == '1'
     time.sleep(2)
-    browser.find_element(By.XPATH, '//*[@id="remove-sauce-labs-backpack"]').click()
+    browser.find_element(By.ID, "remove").click()
     assert browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a').text == ''
 
     browser.quit()
@@ -79,6 +85,7 @@ def test_add_delete_item_to_cart_from_card():
 ####################### Карточка товара ########################
     
 def test_open_item_card_picture():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -92,6 +99,7 @@ def test_open_item_card_picture():
     browser.quit()
 
 def test_open_item_card_title():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -107,6 +115,7 @@ def test_open_item_card_title():
 ####################### Оформление заказа ########################
 
 def test_checkout():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
     
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -134,6 +143,7 @@ def test_checkout():
 ####################### Фильтр ########################
     
 def test_filter():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
     
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -157,6 +167,7 @@ def test_filter():
 ####################### Бургер меню ########################
 
 def test_menu_about():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -171,6 +182,7 @@ def test_menu_about():
 
 
 def test_menu_reset():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
@@ -186,6 +198,7 @@ def test_menu_reset():
     browser.quit()
 
 def test_menu_logout():
+    browser = webdriver.Firefox()
     browser.get('https://www.saucedemo.com')
 
     browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
