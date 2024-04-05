@@ -1,13 +1,12 @@
 username_field = '//*[@id="user-name"]'
 password_field = '//*[@id="password"]'
-wrong_data = 'user'
 login_button = '//*[@id="login-button"]'
+auth_error = '//h3[contains(@data-test, "error")]'
 add_backpack_to_cart = '//*[@id="add-to-cart-sauce-labs-backpack"]'
 remove_backpack_from_cart = '//*[@id="remove-sauce-labs-backpack"]'
 shopping_cart = '//*[@id="shopping_cart_container"]'
 add_item_to_cart_in_card = "add-to-cart"
 remove_item_from_cart_in_card = "remove"
-invertory_item = 'https://www.saucedemo.com/inventory-item.html?id=4'
 item_picture = '//*[@id="item_4_img_link"]'
 item_title = '//*[@id="item_4_title_link"]/div'
 first_name_field = '//*[@id="first-name"]'
@@ -22,3 +21,4 @@ filter_low_to_high = '//*[@id="header_container"]/div[2]/div/span/select/option[
 filter_high_to_low = '//*[@id="header_container"]/div[2]/div/span/select/option[4]'
 inventory_item_name = '//*[@data-test="inventory-item-name"]'
 inventory_item_price ='//*[@data-test="inventory-item-price"]'
+burger_menu = '//*[@id="react-burger-menu-btn"]'

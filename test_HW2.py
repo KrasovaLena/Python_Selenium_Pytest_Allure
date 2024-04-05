@@ -18,7 +18,7 @@ def test_auth_positive(browser):
     browser.find_element(By.XPATH, password_field).send_keys(password)
     browser.find_element(By.XPATH, login_button).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
+    assert browser.current_url == main_page_url, 'url не соответствует ожидаемому'
 
 
 def test_auth_negative(browser):
@@ -28,7 +28,7 @@ def test_auth_negative(browser):
     browser.find_element(By.XPATH, password_field).send_keys(wrong_data)
     browser.find_element(By.XPATH, login_button).click()
     time.sleep(2)
-    assert browser.find_element(By.XPATH, '//h3[contains(@data-test, "error")]').is_displayed
+    assert browser.find_element(By.XPATH, auth_error).is_displayed
 
 
 ####################### Корзина ########################
@@ -49,12 +49,12 @@ def test_delete_item_from_cart(browser):
     time.sleep(2)
     browser.find_element(By.XPATH, shopping_cart).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/cart.html'
+    assert browser.current_url == cart_url
     browser.find_element(By.XPATH, remove_backpack_from_cart).click()
     time.sleep(2)
-    assert browser.find_element(By.XPATH, '//*[@id="cart_contents_container"]/div/div[1]/div[3]').text == ''
+    assert browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a').text == ''
 
-
+# '//*[@id="cart_contents_container"]/div/div[1]/div[3]'
 def test_add_remove_item_to_cart_from_card(browser):
 
     test_auth_positive(browser)
@@ -98,19 +98,19 @@ def test_checkout(browser):
     time.sleep(2)
     browser.find_element(By.XPATH, shopping_cart).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/cart.html'
+    assert browser.current_url == cart_url
     browser.find_element(By.XPATH, checkout_button).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/checkout-step-one.html'
+    assert browser.current_url == checkout_1
     browser.find_element(By.XPATH, first_name_field).send_keys(f'{first_name}')
     browser.find_element(By.XPATH, last_name_field).send_keys(f'{last_name}')
     browser.find_element(By.XPATH, postal_code_field).send_keys(f'{postal_code}')
     browser.find_element(By.XPATH, continue_button).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/checkout-step-two.html'
+    assert browser.current_url == checkout_2
     browser.find_element(By.XPATH, finish_button).click()
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/checkout-complete.html'
+    assert browser.current_url == checkout_complete
 
 
 ####################### Фильтр ########################
@@ -169,8 +169,8 @@ def test_menu_about(browser):
 
     test_auth_positive(browser)
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
-    browser.find_element(By.XPATH, '//*[@id="react-burger-menu-btn"]').click()
+    assert browser.current_url == main_page_url, 'url не соответствует ожидаемому'
+    browser.find_element(By.XPATH, burger_menu).click()
     time.sleep(2)
     browser.find_element(By.XPATH, '//*[@id="about_sidebar_link"]').click()
     time.sleep(2)
@@ -182,11 +182,11 @@ def test_menu_reset(browser):
 
     test_auth_positive(browser)
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
-    browser.find_element(By.XPATH, '//*[@id="add-to-cart-sauce-labs-backpack"]').click()
+    assert browser.current_url == main_page_url, 'url не соответствует ожидаемому'
+    browser.find_element(By.XPATH, add_backpack_to_cart).click()
     time.sleep(2)
     assert browser.find_element(By.XPATH, '//*[@id="shopping_cart_container"]/a/span').text == '1'
-    browser.find_element(By.XPATH, '//*[@id="react-burger-menu-btn"]').click()
+    browser.find_element(By.XPATH, burger_menu).click()
     time.sleep(2)
     browser.find_element(By.XPATH, '//*[@id="reset_sidebar_link"]').click()
     time.sleep(2)
@@ -197,8 +197,8 @@ def test_menu_logout(browser):
 
     test_auth_positive(browser)
     time.sleep(2)
-    assert browser.current_url == 'https://www.saucedemo.com/inventory.html', 'url не соответствует ожидаемому'
-    browser.find_element(By.XPATH, '//*[@id="react-burger-menu-btn"]').click()
+    assert browser.current_url == main_page_url, 'url не соответствует ожидаемому'
+    browser.find_element(By.XPATH, burger_menu).click()
     time.sleep(2)
     browser.find_element(By.XPATH, '//*[@id="logout_sidebar_link"]').click()
     time.sleep(2)
