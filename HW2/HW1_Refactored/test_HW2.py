@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
-from data import *
-from locators import *
+from HW2.HW1_Refactored.data import *
+from HW2.HW1_Refactored.locators import *
 
 
 ####################### Авторизация ########################
