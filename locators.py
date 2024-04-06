@@ -5,6 +5,8 @@ auth_error = '//h3[contains(@data-test, "error")]'
 add_backpack_to_cart = '//*[@id="add-to-cart-sauce-labs-backpack"]'
 remove_backpack_from_cart = '//*[@id="remove-sauce-labs-backpack"]'
 shopping_cart = '//*[@id="shopping_cart_container"]'
+cart_container = '//*[@id="shopping_cart_container"]/a/span'
+empty_cart_container = '//*[@id="shopping_cart_container"]/a'
 add_item_to_cart_in_card = "add-to-cart"
 remove_item_from_cart_in_card = "remove"
 item_picture = '//*[@id="item_4_img_link"]'
@@ -22,3 +24,6 @@ filter_high_to_low = '//*[@id="header_container"]/div[2]/div/span/select/option[
 inventory_item_name = '//*[@data-test="inventory-item-name"]'
 inventory_item_price ='//*[@data-test="inventory-item-price"]'
 burger_menu = '//*[@id="react-burger-menu-btn"]'
+about_sidebar_link = '//*[@id="about_sidebar_link"]'
+reset_sidebar_link = '//*[@id="reset_sidebar_link"]'
+logout_sidebar_link = '//*[@id="logout_sidebar_link"]'
