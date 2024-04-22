@@ -1,8 +1,12 @@
 import time
 import pytest
+import requests
+import urllib3
+from requests.exceptions import MissingSchema, InvalidSchema, InvalidURL
 from selenium import webdriver 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from locators import *
 from data import *
 
@@ -74,7 +78,18 @@ from data import *
 
 
 # def test_task2_broken_images(browser_impl_wait, expl_wait):
-
+#     brokenImg = 0
+#     browser_impl_wait.get(task2_broken_images)
+#     total_img = browser_impl_wait.find_elements(By.TAG_NAME, "img")
+#     print(f'Total quantity of images on {task2_broken_images} are {str(len(total_img))}')
+ 
+#     for img in total_img:
+#         response = requests.get(img.get_attribute('src'), stream=True)
+#         if (response.status_code != 200):
+#             print(f'{img.get_attribute('outerHTML')} is broken.')
+#             brokenImg = brokenImg + 1
+    
+#     print(f'The page {task2_broken_images} has {str(brokenImg)} broken images')
 
 
 # def test_task2_checkboxes(browser_impl_wait, expl_wait):
