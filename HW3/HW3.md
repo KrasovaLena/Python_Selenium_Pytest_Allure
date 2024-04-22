@@ -28,6 +28,7 @@
 С использованием Explicit waits и Expected Conditions +
 С использованием Implicit waits +
 С использованием time.sleep() +
+
 Так же делюсь несколькими дополнительными сайтами для практики ожиданий:
 
 https://www.selenium.dev/selenium/web/dynamic.html
@@ -39,10 +40,11 @@ https://the-internet.herokuapp.com/dynamic_loading
 
 Ссылки на упражнения:
 
-https://the-internet.herokuapp.com/add_remove_elements/ (Необходимо создать и удалить элемент)
-https://the-internet.herokuapp.com/basic_auth (Необходимо пройти базовую авторизацию)
-https://the-internet.herokuapp.com/broken_images (Необходимо найти сломанные изображения)
-https://the-internet.herokuapp.com/checkboxes (Практика с чек боксами)
+https://the-internet.herokuapp.com/add_remove_elements/ (Необходимо создать и удалить элемент) +
+https://the-internet.herokuapp.com/basic_auth (Необходимо пройти базовую авторизацию) +
+https://the-internet.herokuapp.com/broken_images (Необходимо найти сломанные изображения) +
+https://the-internet.herokuapp.com/checkboxes (Практика с чек боксами) +
+
 Так же важно помнить что мы должны получать информацию об вебэлементах и сравнивать ее с ожидаемым результатом.
 
 Например: текст, цвет, расположение, отображение, выбор чекбокса и так далее. Ссылка на страницу с документацией: https://www.selenium.dev/documentation/webdriver/elements/information/
