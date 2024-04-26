@@ -11,3 +11,8 @@
 
 **HW4:**
 ***Домашнее задание к практике №4 POM (Page elements) в Selenium***
+
+**HW5:**
+***Домашнее задание к практике №5 Selene & Allure***
+To run test: ```pytest -s -v test_auth.py --alluredir=allure-results```
+To check the report: ```allure serve allure-results```
