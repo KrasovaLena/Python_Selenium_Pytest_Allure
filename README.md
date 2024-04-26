@@ -14,5 +14,5 @@
 
 **HW5:**
 ***Домашнее задание к практике №5 Selene & Allure***
-To run test: ```pytest -s -v test_auth.py --alluredir=allure-results```
-To check the report: ```allure serve allure-results```
+<br/>To run test: ```pytest -s -v test_auth.py --alluredir=allure-results```
+<br/>To check the report: ```allure serve allure-results```
